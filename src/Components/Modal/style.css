@@ -1,0 +1,39 @@
+.modal-dialog {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+  }
+  
+  .modal-body {
+    padding: 8px 0;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+  }
+  
+  .btn-cancel,
+  .btn-confirm {
+    cursor: pointer;
+    padding: 8px 16px;
+    margin-left: 8px;
+  }
+  
+  .btn-confirm {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+  }
