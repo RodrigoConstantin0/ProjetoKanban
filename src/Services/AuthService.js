@@ -1,4 +1,4 @@
-const AuthService = {
+const {AuthService} = {
     isAuthenticated: () => {
       const userLoggedIn = localStorage.getItem('userLoggedIn');
       return userLoggedIn === 'true' || false;
@@ -13,4 +13,4 @@ const AuthService = {
     },
   };
   
-  export default AuthService;
+  export  {AuthService};
