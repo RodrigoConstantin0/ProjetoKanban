@@ -60,6 +60,9 @@ margin-left: 40px;
 h1{
 text-align: center;
 }
+::placeholder{
+  color: rgb(72, 54, 80);
+}
 
 @keyframes rotate {
     from {
@@ -74,3 +77,4 @@ text-align: center;
     animation: rotate 5s linear infinite;  
     filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
   }
+  
