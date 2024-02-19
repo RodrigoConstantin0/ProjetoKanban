@@ -1,0 +1,75 @@
+#root{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body{
+  background-image: linear-gradient(to right top, #d6a0f6, #d094f6, #ca88f5, #c37cf5, #bc70f4, #ab77f9, #9a7efd, #8784ff, #6c98ff, #58aaff, #54b9ff, #62c6ff);
+  display: flex;
+  justify-content: center;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  padding: 0 1rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.wrapperlogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wrapperlogo img {
+  width: 50px;
+  height: 50px;
+}
+.wrapperlogo h2 {
+  margin-right: 10px;
+  color: rgb(119, 34, 153);
+}
+nav button {
+  background-color: #772299;
+  color: white;
+  border-style: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+nav button:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+nav button:last-child {
+  margin-left: 1rem;
+}
+
+#buttonSair{
+  background-color: rgba(119, 34, 153, 0.2);
+  color: rgb(119, 34, 153);
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  color: white;
+}
+#logoGithut {
+  width: 20px;
+  background-color: rgba(119, 34, 153, 0.2);
+  padding: 8px;
+  border-radius: 100%;
+}
+#logoGithub:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}

@@ -1,0 +1,80 @@
+input{ 
+    all: unset;
+}
+body {    
+    justify-content: center;
+    margin: 0;
+    display: flex;
+    min-width: 320px;
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #d6a0f6, #d094f6, #ca88f5, #c37cf5, #bc70f4, #ab77f9, #9a7efd, #8784ff, #6c98ff, #58aaff, #54b9ff, #62c6ff);
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.login-style{
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 30px;
+margin-top: 150px;
+color: rgb(119, 34, 153);
+display: flex;
+flex-direction: column;
+}
+button{
+    margin: auto;
+    margin-top: 10px;   
+    border-radius: 5px; 
+    background-color: rgb(119, 34, 153);
+    color: white;
+    border-style: none;
+    padding: 4px 8px;  
+}
+
+.Login-header {
+  background: transparent;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  margin-top: 30px;
+  color: rgb(119, 34, 153);
+}
+input, textarea {
+color: white;
+text-align: center;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+margin-top: 10px;
+margin-left: 30px;
+}
+.register-link{
+    margin-top: 10px;
+    text-decoration: none;
+}
+h1{
+text-align: center;
+}
+::placeholder{
+  color: rgb(72, 54, 80);
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .logo {
+    animation: rotate 5s linear infinite;  
+    filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
+  }
+  
