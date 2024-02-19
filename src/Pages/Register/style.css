@@ -1,0 +1,23 @@
+.register-global{
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 30px;
+margin-top: 150px;
+color: rgb(119, 34, 153);
+display: flex;
+flex-direction: column;
+}
+.form-register{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+label {
+    margin-top: 10px;
+}
