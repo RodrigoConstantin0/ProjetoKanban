@@ -4,7 +4,7 @@ interface AuthService {
   logout: () => void;
 }
 
-const AuthService: AuthService = {
+const AuthServiceProps: AuthService = {
   isAuthenticated: () => {
     const userLoggedIn = localStorage.getItem('userLoggedIn');
     return userLoggedIn === 'true' || false;
@@ -19,4 +19,4 @@ const AuthService: AuthService = {
   },
 };
 
-export default AuthService;
+export default AuthServiceProps;

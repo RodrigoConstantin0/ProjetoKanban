@@ -23,8 +23,9 @@ const Login: React.FC = () => {
                 <label htmlFor="password"></label>
                 <input type="password" placeholder='Digite sua senha' />
             </div>
-
-               <button>Logar</button>
+                
+               <button>Entrar</button>
+               
                <Link to="../Register/index.tsx" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
             </div>
         </>

@@ -8,6 +8,7 @@ const Router = () => {
             <Routes>
                 <Route path="/Login/index.tsx" element={<Login/>}/>
                 <Route path="/Register/index.tsx" element={<Register/>}/>
+                
             </Routes>
         </BrowserRouter>
     )
