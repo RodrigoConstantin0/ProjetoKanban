@@ -45,7 +45,7 @@ const Register: React.FC = () => {
     
     const isLoggedIn = AuthServiceProps.isAuthenticated();
     if (isLoggedIn) {
-      navigate('../Kanban/index.tsx');
+      navigate('/Kanban');
     } else {
       
       alert("Usuário não autenticado após o cadastro.");
@@ -70,6 +70,7 @@ const Register: React.FC = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -80,6 +81,7 @@ const Register: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -90,6 +92,7 @@ const Register: React.FC = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -100,6 +103,7 @@ const Register: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 

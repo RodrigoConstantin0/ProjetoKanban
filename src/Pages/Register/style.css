@@ -15,9 +15,20 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    text-decoration: none;
+    text-decoration: none;    
 }
 
 label {
     margin-top: 10px;
+}
+.input-Cadastro{
+color: rgb(219, 5, 5);
+text-align: center;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+margin-top: 10px;
+margin-left: 30px;
 }

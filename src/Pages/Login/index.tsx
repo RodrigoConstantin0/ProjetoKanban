@@ -16,12 +16,18 @@ const Login: React.FC = () => {
                 
             <div className='input-container'> 
                 <label htmlFor="login"></label>
-                <input type="text" placeholder='Digite seu usuario' />
+                <input
+                 type="text"
+                  placeholder='Digite seu usuario'
+                  className='input-Login' />
             </div>
 
             <div className='input-container'>
                 <label htmlFor="password"></label>
-                <input type="password" placeholder='Digite sua senha' />
+                <input 
+                type="password" 
+                placeholder='Digite sua senha'
+                className='input-Login' />
             </div>
                 
                <button>Entrar</button>
