@@ -32,7 +32,7 @@ function CardInfo(props: CardInfoProps) {
     const index = cardValues.labels.findIndex(
       (item) => item.text === label.text,
     );
-    if (index > -1) return; //if label text already exist then return
+    if (index > -1) return;
 
     setSelectedColor("");
     setCardValues({
@@ -118,7 +118,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <Type />
-            <p>TITULO</p>
+            <p>Titulo</p>
           </div>
           <CustomInput
             defaultValue={cardValues.title}
@@ -131,7 +131,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <List />
-            <p>DESCRIÇÃO</p>
+            <p>Descrição</p>
           </div>
           <CustomInput
             defaultValue={cardValues.desc}
@@ -144,7 +144,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <Calendar />
-            <p>DATA</p>
+            <p>Data</p>
           </div>
           <input
             type="date"
@@ -175,8 +175,8 @@ function CardInfo(props: CardInfoProps) {
             ))}
           </ul>
           <CustomInput
-            text="Add Label"
-            placeholder="Enter label text"
+            text="Adcionar Etiqueta"
+            placeholder="Digite o nome da etiqueta"
             onSubmit={(value: string) =>
               addLabel({ color: selectedColor, text: value })
             }
@@ -186,7 +186,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <CheckSquare />
-            <p>TAREFAS</p>
+            <p>Tarefas</p>
           </div>
           <div className="cardinfo-box-progress-bar">
             <div
@@ -213,8 +213,8 @@ function CardInfo(props: CardInfoProps) {
             ))}
           </div>
           <CustomInput
-            text={"Add a Task"}
-            placeholder="Enter task"
+            text={"Adicionar Tarefa"}
+            placeholder="Digite a Tarefa"
             onSubmit={addTask}
           />
         </div>

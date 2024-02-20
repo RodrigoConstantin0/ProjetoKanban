@@ -152,9 +152,9 @@ function Dashboard() {
             <CustomInput
               displayClass="app-boards-add-board"
               editClass="app-boards-add-board-edit"
-              placeholder="DIGITE O NOME DA COLUNA"
-              text="ADICIONAR COLUNA"
-              buttonText="ADICIONAR COLUNA"
+              placeholder="Digite o título da coluna..."
+              text="Adicionar Coluna"
+              buttonText="Adicionar"
               onSubmit={addboardHandler}
             />
           </div>

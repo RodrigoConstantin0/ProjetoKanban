@@ -65,8 +65,8 @@ function Board(props: BoardProps) {
             />
           ))}
           <CustomInput
-            text="+ Add Card"
-            placeholder="Enter Card Title"
+            text="+ Adicionar Cartão"
+            placeholder="Digite o título do cartão..."
             displayClass="board-add-card"
             editClass="board-add-card-edit"
             onSubmit={(value: string) => addCard(board?.id, value)}
