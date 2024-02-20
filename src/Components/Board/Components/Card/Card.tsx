@@ -59,7 +59,7 @@ function Card(props: CardProps) {
                 class="board-dropdown"
                 onClose={() => setShowDropdown(false)}
               >
-                <p onClick={() => removeCard(boardId, id)}>APAGAR A TAREFA</p>
+                <p onClick={() => removeCard(boardId, id)}>Apagar a Tarefa</p>
               </Dropdown>
             )}
           </div>

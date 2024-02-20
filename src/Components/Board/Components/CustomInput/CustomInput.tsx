@@ -49,7 +49,7 @@ function CustomInput(props: CustomInputProps) {
             autoFocus
           />
           <div className="custom-input-edit-footer">
-            <button type="submit">{buttonText || "Add"}</button>
+            <button type="submit">{buttonText || "Adicionar"}</button>
             <X onClick={() => setIsCustomInput(false)} className="closeIcon" />
           </div>
         </form>
