@@ -40,14 +40,13 @@ const Register: React.FC = () => {
     localStorage.setItem("users", JSON.stringify(existingUsers));
     
     AuthServiceProps.login(email);
+    localStorage.setItem('userName', name); // Adicionando o nome do usuário no localStorage
     alert("Cadastro realizado com sucesso!");
-    
     
     const isLoggedIn = AuthServiceProps.isAuthenticated();
     if (isLoggedIn) {
-      navigate('../Kanban/index.tsx');
+      navigate('/Kanban');
     } else {
-      
       alert("Usuário não autenticado após o cadastro.");
     }
   };
@@ -70,6 +69,7 @@ const Register: React.FC = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -80,6 +80,7 @@ const Register: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -90,6 +91,7 @@ const Register: React.FC = () => {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -100,6 +102,7 @@ const Register: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="input-Cadastro"
             />
           </label>
 
@@ -107,7 +110,7 @@ const Register: React.FC = () => {
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <Link to="../Login/index.tsx" className="form-register"> Já possui cadastro? Clique aqui! </Link>
+          <Link to="/" className="form-register"> Já possui cadastro? Clique aqui! </Link>
         </form>
       </div>
     </>

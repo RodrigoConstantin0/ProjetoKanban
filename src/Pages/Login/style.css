@@ -1,4 +1,4 @@
-input{ 
+.input-VaiDarCerto{ 
     all: unset;
 }
 body {    
@@ -42,8 +42,8 @@ button{
   margin-top: 30px;
   color: rgb(119, 34, 153);
 }
-input, textarea {
-color: white;
+.input-Login, textarea {
+color: rgb(136, 46, 46);
 text-align: center;
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -77,4 +77,3 @@ text-align: center;
     animation: rotate 5s linear infinite;  
     filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
   }
-  

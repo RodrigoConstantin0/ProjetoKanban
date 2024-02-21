@@ -7,11 +7,13 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/Login/index.tsx" element={<Login/>}/>
+                <Route path="/" element={<Login/>}/>
                 <Route path="/Register/index.tsx" element={<Register/>}/>
                 <Route path="/Kanban" element={<Kanban/>}/>
             </Routes>
         </BrowserRouter>
     )
 }
+
+
 export {Router}
