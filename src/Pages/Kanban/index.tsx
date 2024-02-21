@@ -2,6 +2,7 @@ import './style.css'
 import { Button } from "../../Components/Button/index.tsx";
 import AuthServiceProps from "../../Services/AuthService";
 import { useNavigate } from 'react-router-dom';
+import App from '../../Components/Board/App.tsx';
 
 function Kanban() {
   const isLoggedIn = AuthServiceProps.isAuthenticated();
@@ -24,7 +25,7 @@ function Kanban() {
           {isLoggedIn && (<p>Bem-vindo, {userName} <Button titulo="Sair" tipo='logout' onClick={handleLogout} /></p>)}
         </nav>
       </header>
-
+    <App/>
       <footer>
         <p>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
         <a
