@@ -9,14 +9,13 @@ body{
   display: flex;
   justify-content: center;
 }
-header {
+.header-kanban{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin: 1rem 2rem;
   padding: 0 1rem;
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -29,12 +28,12 @@ header {
   flex-direction: row;
   align-items: center;
 }
-.wrapperlogo img {
-  width: 50px;
-  height: 50px;
+
+.wrapperlogo{
+  animation: rotate 5s linear infinite;  
+  filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
 }
-.wrapperlogo h2 {
-  margin-right: 10px;
+.h2header { 
   color: rgb(119, 34, 153);
 }
 nav button {
@@ -44,12 +43,6 @@ nav button {
   padding: 8px 12px;
   border-radius: 6px;
   font-weight: bold;
-}
-nav button:hover {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-nav button:last-child {
-  margin-left: 1rem;
 }
 
 #buttonSair{
@@ -72,4 +65,13 @@ footer {
 }
 #logoGithub:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
