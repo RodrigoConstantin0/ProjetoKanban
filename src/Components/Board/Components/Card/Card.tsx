@@ -27,6 +27,7 @@ function Card(props: CardProps) {
       {showModal && (
         <CardInfo
           onClose={() => setShowModal(false)}
+          open={showModal}
           card={card}
           boardId={boardId}
           updateCard={updateCard}

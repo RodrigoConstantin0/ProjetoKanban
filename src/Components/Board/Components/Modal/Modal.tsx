@@ -1,18 +1,50 @@
+import { ReactNode, useEffect, useRef } from "react";
 import "./Modal.css";
 
-function Modal(props: any) {
+interface ModalProps {
+  children: ReactNode;
+  open: boolean;
+  onClose?: () => void;
+}
+
+function Modal({ children, open, onClose }: ModalProps) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  function handleClick() {
+    dialogRef.current?.close();
+  }
+
+  useEffect(() => {
+    if (open) {
+      dialogRef.current?.showModal();
+    } else {
+      dialogRef.current?.close();
+    }
+  }, [open]);
+
+  useEffect(() => {
+    const dialogElement = dialogRef.current;
+    if (dialogElement) {
+      dialogElement.addEventListener("close", closeModal);
+    }
+
+    function closeModal() {
+      onClose?.();
+    }
+
+    return () => {
+      dialogElement?.removeEventListener("close", closeModal);
+    };
+  }, [dialogRef, onClose]);
+
   return (
-    <div
-      className="modal"
-      onClick={() => (props.onClose ? props.onClose() : "")}
+    <dialog
+      className="modal-content custom-scroll"
+      onClick={handleClick}
+      ref={dialogRef}
     >
-      <div
-        className="modal-content custom-scroll"
-        onClick={(event) => event.stopPropagation()}
-      >
-        {props.children}
-      </div>
-    </div>
+      <div onClick={(event) => event.stopPropagation()}>{children}</div>
+    </dialog>
   );
 }
 
