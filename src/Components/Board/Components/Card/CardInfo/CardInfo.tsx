@@ -8,13 +8,13 @@ import "./CardInfo.css";
 import { ICard, ILabel, ITask } from "../../../Interfaces/Kanban";
 import Chip from "../../Common/Chip";
 interface CardInfoProps {
+  open: boolean;
   onClose: () => void;
   card: ICard;
   boardId: number;
   updateCard: (boardId: number, cardId: number, card: ICard) => void;
 }
-function CardInfo(props: CardInfoProps) {
-  const { onClose, card, boardId, updateCard } = props;
+function CardInfo({ onClose, open, card, boardId, updateCard }: CardInfoProps) {
   const [selectedColor, setSelectedColor] = useState("");
   const [cardValues, setCardValues] = useState<ICard>({
     ...card,
@@ -113,7 +113,7 @@ function CardInfo(props: CardInfoProps) {
   const calculatedPercent = calculatePercent();
 
   return (
-    <Modal onClose={onClose}>
+    <Modal open={open} onClose={onClose}>
       <div className="cardinfo">
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
