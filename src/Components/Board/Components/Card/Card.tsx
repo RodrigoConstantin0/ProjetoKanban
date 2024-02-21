@@ -64,11 +64,13 @@ function Card(props: CardProps) {
             )}
           </div>
         </div>
-        <div className="card-title">{title}</div>
-        <div>
-          <p title={desc}>
-            <AlignLeft />
-          </p>
+        <div className="wrapper-card-title-icon">
+          <div className="card-title">{title}</div>
+          <div>
+            <p title={desc}>
+              <AlignLeft />
+            </p>
+        </div>
         </div>
         <div className="card-footer">
           {date && (
