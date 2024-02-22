@@ -1,8 +1,11 @@
 .input-VaiDarCerto{ 
     all: unset;
 }
-body {    
-    justify-content: center;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+    /* justify-content: center; */
     margin: 0;
     display: flex;
     min-width: 320px;

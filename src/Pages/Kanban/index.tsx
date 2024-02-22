@@ -17,12 +17,15 @@ function Kanban() {
   return (
     <>
       <header className="header-kanban">
-        <div className="wrapperlogo">
-          <img src="/src/Assets/KanbanLogo.png" alt="Logo" />
+        <div className='wrapperlogo'>
+          <div className="wrapperImg">
+            <img src="/src/Assets/KanbanLogo.png" alt="Logo" className='logo'/>
+          </div>
+            <h2 className="h2header"> Kanban </h2>
         </div>
-        <h2 className="h2header"> Kanban </h2>            
         <nav>
-          {isLoggedIn && (<p>Bem-vindo, {userName} <Button titulo="Sair" tipo='logout' onClick={handleLogout} /></p>)}
+          {isLoggedIn && (<p>Bem-vindo, {userName} </p>)}
+          <Button titulo="Sair" tipo='logout' onClick={handleLogout} />
         </nav>
       </header>
     <App/>
