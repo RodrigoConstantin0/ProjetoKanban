@@ -1,6 +1,3 @@
-.input-VaiDarCerto{ 
-    all: unset;
-}
 body {    
     justify-content: center;
     margin: 0;
@@ -24,6 +21,7 @@ color: rgb(119, 34, 153);
 display: flex;
 flex-direction: column;
 }
+
 button{
     margin: auto;
     margin-top: 10px;   
@@ -42,6 +40,7 @@ button{
   margin-top: 30px;
   color: rgb(119, 34, 153);
 }
+
 .input-Login, textarea {
 color: rgb(136, 46, 46);
 text-align: center;
@@ -57,7 +56,7 @@ margin-left: 30px;
     margin-top: 10px;
     text-decoration: none;
 }
-h1{
+.h1Login{
 text-align: center;
 }
 ::placeholder{
