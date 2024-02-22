@@ -36,7 +36,7 @@ const Login: React.FC = () => {
     return (
         <>
             <div className="Login-header">
-                <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
+                <img src={`${process.env.APP_URL}/src/Assets/KanbanLogo.png`} alt="Logo" className="logo" />
                 <h2>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">
