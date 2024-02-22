@@ -130,6 +130,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
+    console.log("boards", boards);
     updateLocalStorageBoards(boards);
   }, [boards]);
   return (
