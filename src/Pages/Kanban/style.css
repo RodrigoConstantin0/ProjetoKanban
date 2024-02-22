@@ -1,20 +1,19 @@
-#root{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 body{
   background-image: linear-gradient(to right top, #d6a0f6, #d094f6, #ca88f5, #c37cf5, #bc70f4, #ab77f9, #9a7efd, #8784ff, #6c98ff, #58aaff, #54b9ff, #62c6ff);
-  display: flex;
-  justify-content: center;
+  display: flex; 
+  margin: 0;
+  display: flex; 
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-y: hidden;
+
 }
 .header-kanban{
-  display: flex;
-  flex-direction: row;
+  display: flex; 
+  margin-top: 10px;
   align-items: center;
   justify-content: space-between;
-  margin: 1rem 2rem;
+  margin-left: 29rem;
   padding: 0 1rem;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
@@ -22,6 +21,7 @@ body{
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100vh;
 }
 .wrapperlogo {
   display: flex;
@@ -49,16 +49,9 @@ nav button {
   background-color: rgba(119, 34, 153, 0.2);
   color: rgb(119, 34, 153);
 }
-footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1rem 2rem;
-  color: white;
-}
+
 #logoGithut {
-  width: 20px;
+ 
   background-color: rgba(119, 34, 153, 0.2);
   padding: 8px;
   border-radius: 100%;

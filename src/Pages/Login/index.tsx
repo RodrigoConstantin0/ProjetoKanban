@@ -62,7 +62,7 @@ const Login: React.FC = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>                                           
-                     <Button titulo="Entrar" tipo="login"/>                      
+                     <Button  titulo="Entrar" tipo="login"/>                      
                    
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     

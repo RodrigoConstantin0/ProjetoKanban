@@ -105,12 +105,13 @@ const Register: React.FC = () => {
               className="input-Cadastro"
             />
           </label>
-
+          <div className="buttonRegister">
           <Button titulo="Cadastrar" type="submit"/>
+          </div>
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <Link to="/" className="form-register"> Já possui cadastro? Clique aqui! </Link>
+          <Link to="/" className="register"> Já possui cadastro? Clique aqui! </Link>
         </form>
       </div>
     </>
