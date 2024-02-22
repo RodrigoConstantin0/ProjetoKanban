@@ -41,7 +41,7 @@
   transform: translateX(15px);
   flex: 1;
   cursor: pointer;
-  opacity: 0;
+  opacity: 100;
   transition: 200ms;
 }
 
@@ -60,6 +60,7 @@
   font-weight: bold;
   font-size: 1rem;
   line-height: 1.875rem;
+  overflow: hidden;
 }
 
 .card-footer {
