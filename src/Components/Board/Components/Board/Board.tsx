@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MoreHorizontal } from "react-feather";
 
 import Card from "../Card/Card";

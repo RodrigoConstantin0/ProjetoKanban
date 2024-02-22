@@ -1,4 +1,3 @@
-import React from "react";
 import { X } from "react-feather";
 import { ILabel } from "../../Interfaces/Kanban";
 interface ChipProps {

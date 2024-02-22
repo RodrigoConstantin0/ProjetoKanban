@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Calendar, CheckSquare, List, Tag, Trash, Type } from "react-feather";
 import { colorsList } from "../../../Helper/Util";
 import Modal from "../../Modal/Modal";
@@ -30,7 +30,7 @@ function CardInfo({ onClose, open, card, boardId, updateCard }: CardInfoProps) {
 
   const addLabel = (label: ILabel) => {
     const index = cardValues.labels.findIndex(
-      (item) => item.text === label.text,
+      (item) => item.text === label.text
     );
     if (index > -1) return;
 
@@ -43,7 +43,7 @@ function CardInfo({ onClose, open, card, boardId, updateCard }: CardInfoProps) {
 
   const removeLabel = (label: ILabel) => {
     const tempLabels = cardValues.labels.filter(
-      (item) => item.text !== label.text,
+      (item) => item.text !== label.text
     );
 
     setCardValues({
@@ -91,7 +91,7 @@ function CardInfo({ onClose, open, card, boardId, updateCard }: CardInfoProps) {
   const calculatePercent = () => {
     if (!cardValues.tasks?.length) return 0;
     const completed = cardValues.tasks?.filter(
-      (item) => item.completed,
+      (item) => item.completed
     )?.length;
     return (completed / cardValues.tasks?.length) * 100;
   };

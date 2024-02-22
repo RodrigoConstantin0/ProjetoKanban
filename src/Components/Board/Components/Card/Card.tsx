@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AlignLeft, CheckSquare, Clock, MoreHorizontal } from "react-feather";
 import { formatDate } from "../../Helper/Util";
 import { ICard } from "../../Interfaces/Kanban";
@@ -71,7 +71,7 @@ function Card(props: CardProps) {
             <p title={desc}>
               <AlignLeft />
             </p>
-        </div>
+          </div>
         </div>
         <div className="card-footer">
           {date && (
