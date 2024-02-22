@@ -1,27 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthServiceProps from '../../Services/AuthService';
+import { Button } from '../../Components/Button';
+import './style.css'
+
 
 const Login: React.FC = () => {
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    
+    interface User {
+        name: string;
+        email: string;
+        password: string;
+    }
+
+    const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const existingUsers: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+        const user = existingUsers.find((user) => user.email === email && user.password === password);
+
+        if (user) {
+            AuthServiceProps.login(email);
+            navigate('/Kanban');
+        } else {
+            setErrorMessage('Usuário ou senha incorretos.');
+        }
+    };
+
     return (
         <>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src="/src/Assets/KanbanLogo.png" alt="Logo" style={{ width: '100px', height: '100px' }} />
-                
-                <h2 style={{ marginRight: '10px' }}>
-                    Grupo 02 - Kanban
-                </h2>
+            <div className="Login-header">
+                <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
+                <h2>Grupo 02 - Kanban</h2>
             </div>
-            <div>
-                <label htmlFor="login">Nome:</label>
-                <input type="text" id='login' />
+            <div className="login-style">
+                <h1>Login</h1>
+                <form className="form-login" onSubmit={handleLogin}>
+                    <div className='input-container'> 
+                        <label htmlFor="login"></label>
+                        <input
+                            type="text"
+                            placeholder='Digite seu email'
+                            className='input-Login'
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className='input-container'>
+                        <label htmlFor="password"></label>
+                        <input 
+                            type="password" 
+                            placeholder='Digite sua senha'
+                            className='input-Login' 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>                                           
+                     <Button titulo="Entrar" tipo="login"/>                      
+                   
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                    
+                </form>
+                <Link to="../Register/index.tsx" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
             </div>
-            <div>
-                <label htmlFor="password">Senha:</label>
-                <input type="password" id='password' />
-            </div>
-            <a href="../Register/index.tsx">Não tem uma conta? Cadastre-se aqui!</a>
         </>
     );
 }
 
 export { Login };
-
