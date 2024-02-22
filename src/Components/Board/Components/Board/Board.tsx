@@ -39,7 +39,10 @@ function Board(props: BoardProps) {
           </p>
           <div
             className="board-header-title-more"
-            onClick={() => setShowDropdown(true)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setShowDropdown(true);
+            }}
           >
             <MoreHorizontal />
             {showDropdown && (
@@ -47,7 +50,7 @@ function Board(props: BoardProps) {
                 class="board-dropdown"
                 onClose={() => setShowDropdown(false)}
               >
-                <p onClick={() => removeBoard(board?.id)}>APAGAR A COLUNA</p>
+                <p onClick={() => removeBoard(board?.id)}>Apagar Coluna</p>
               </Dropdown>
             )}
           </div>

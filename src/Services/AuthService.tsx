@@ -1,10 +1,10 @@
-interface AuthService {
+interface AuthServiceProps {
   isAuthenticated: () => boolean;
   login: (email: string) => void;
   logout: () => void;
 }
 
-const AuthServiceProps: AuthService = {
+const AuthService: AuthServiceProps = {
   isAuthenticated: () => {
     const userLoggedIn = localStorage.getItem('userLoggedIn');
     return userLoggedIn === 'true' || false;
@@ -18,5 +18,5 @@ const AuthServiceProps: AuthService = {
     localStorage.removeItem('email');
   },
 };
+export default AuthService;
 
-export default AuthServiceProps;
