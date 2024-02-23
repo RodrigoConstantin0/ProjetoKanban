@@ -1,19 +1,24 @@
-body{
+body {
   background-image: linear-gradient(to right top, #d6a0f6, #d094f6, #ca88f5, #c37cf5, #bc70f4, #ab77f9, #9a7efd, #8784ff, #6c98ff, #58aaff, #54b9ff, #62c6ff);
   display: flex; 
   margin: 0;
-  display: flex; 
   min-height: 100vh;
   flex-direction: column;
   overflow-y: hidden;
-
 }
-.header-kanban{
+
+.container {
+  min-height: 100vh;
+  padding-bottom: 60px; /* Altura do seu footer */
+  box-sizing: border-box; /* Isso garante que a altura do padding seja incluída na altura total */
+}
+
+.header-kanban {
   display: flex; 
   margin-top: 10px;
   align-items: center;
   justify-content: space-between;
-  margin-left: 28%;
+  margin-left: 10vw;
   padding: 0 1rem;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
@@ -21,21 +26,24 @@ body{
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 100vh;
+  width: 80vw;
 }
+
 .wrapperlogo {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.wrapperlogo{
+.wrapperlogo {
   animation: rotate 5s linear infinite;  
   filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
 }
+
 .h2header { 
   color: rgb(119, 34, 153);
 }
+
 nav button {
   background-color: #772299;
   color: white;
@@ -45,26 +53,62 @@ nav button {
   font-weight: bold;
 }
 
-#buttonSair{
+#buttonSair {
   background-color: rgba(119, 34, 153, 0.2);
   color: rgb(119, 34, 153);
 }
 
 #logoGithut {
- 
   background-color: rgba(119, 34, 153, 0.2);
   padding: 8px;
   border-radius: 100%;
 }
+
 #logoGithub:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 @keyframes rotate {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
+}
+
+@media screen and (max-width: 768px) {
+  .register-global {
+      margin-left: 8%;
+      width: 80%;
+  }
+}
+
+.style-bemVindo{
+  color: rgb(253, 253, 253);
+}
+.footer-style{
+  justify-content: space-between;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.footer-left{
+  display: flex;
+  align-items: center;
+}
+
+.P-footer{
+ margin-right: 20px;
+ color:rgb(119, 34, 153);
+}
+
+.img-footer{
+  width: 40px; 
 }
