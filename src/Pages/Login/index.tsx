@@ -36,7 +36,7 @@ const Login: React.FC = () => {
         <>
             <div className="Login-header">
                 <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
-                <h2>Grupo 02 - Kanban</h2>
+                <h2 className='h2-style'>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">
                 <h1 className='h1Login'>Login</h1>
@@ -60,7 +60,8 @@ const Login: React.FC = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </div>                                           
+                    </div>  
+                                                             
                      <Button  titulo="Entrar" tipo="login" estilo="login-button"/>                      
                    
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
@@ -68,6 +69,22 @@ const Login: React.FC = () => {
                 </form>
                 <Link to="../Register" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
             </div>
+    <footer className='footer-style'>
+        <div className='footer-left'> 
+        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        <a
+          href="https://github.com/RodrigoConstantin0/ProjetoKanban"
+          target="_blank"
+        >
+          <img
+            src="/src/Assets/logoGithub.svg"
+            alt="logo-gitbub"
+            id="logoGithut"
+            className='img-footer'
+          />
+        </a>
+        </div>
+    </footer>
         </>
     );
 }
