@@ -22,16 +22,22 @@ function Kanban() {
       <header className="header-kanban">
         <div className="wrapperlogo">
           <img src={kanbanLogo} alt="Logo" />
+          <h2 className="h2header"> Kanban </h2>  
         </div>
-        <h2 className="h2header"> Kanban </h2>            
-        <nav>
-          {isLoggedIn && (<p className='style-bemVindo'>Bem-vindo, {userName} <Button titulo="Sair" tipo='logout' onClick={handleLogout} estilo='kanban-button'/></p>)}
+        <nav className='navKanban'>
+          {isLoggedIn && (
+            <>
+              <p className='style-bemVindo'>Bem-vindo, {userName}</p>
+              <Button titulo="Sair" tipo='logout' onClick={handleLogout} estilo='kanban-button'/>
+            </>
+          )}
         </nav>
       </header>
     <App/>
     <footer className='footer-style'>
         <div className='footer-left'> 
-        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+          <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        </div>
         <a
           href="https://github.com/RodrigoConstantin0/ProjetoKanban"
           target="_blank"
@@ -43,7 +49,6 @@ function Kanban() {
             className='img-footer'
           />
         </a>
-        </div>
     </footer>
       </div>
     </>

@@ -13,7 +13,6 @@ const AuthService: AuthServiceProps = {
     localStorage.setItem('userLoggedIn', 'true');
     localStorage.setItem('userEmail', email);
     localStorage.setItem('userName', name);
-    window.location.reload();
   },
   logout: () => {
     localStorage.removeItem('userLoggedIn');

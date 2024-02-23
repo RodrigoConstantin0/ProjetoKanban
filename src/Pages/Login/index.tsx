@@ -26,7 +26,8 @@ const Login: React.FC = () => {
         const user = existingUsers.find((user) => user.email === email && user.password === password);
 
         if (user) {
-            AuthServiceProps.login(email,user.name);            
+            AuthServiceProps.login(email,user.name);
+            window.location.reload();            
         } else {
             setErrorMessage('Usuário ou senha incorretos.');
         }
@@ -36,7 +37,7 @@ const Login: React.FC = () => {
         <>
             <div className="Login-header">
                 <img src={kanbanLogo} alt="Logo" className="logo" />
-                <h2 className='h2-style'>Grupo 02 - Kanban</h2>
+                <h2 className='h2-style'>Kanban</h2>
             </div>
             <div className="login-style">
                 <h1 className='h1Login'>Login</h1>
@@ -72,6 +73,7 @@ const Login: React.FC = () => {
     <footer className='footer-style'>
         <div className='footer-left'> 
         <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        </div>
         <a
           href="https://github.com/RodrigoConstantin0/ProjetoKanban"
           target="_blank"
@@ -83,7 +85,6 @@ const Login: React.FC = () => {
             className='img-footer'
           />
         </a>
-        </div>
     </footer>
         </>
     );
