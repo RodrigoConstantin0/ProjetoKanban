@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthServiceProps from '../../Services/AuthService';
+import kanbanLogo from "../../Assets/KanbanLogo.png";
+import githubLogo from "../../Assets/logoGithub.svg";
 import { Button } from '../../Components/Button';
-import './style.css'
+import './style.css';
 
 
 const Login: React.FC = () => {
@@ -34,7 +36,7 @@ const Login: React.FC = () => {
     return (
         <>
             <div className="Login-header">
-                <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
+                <img src={kanbanLogo} alt="Logo" className="logo" />
                 <h2 className='h2-style'>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">
@@ -76,7 +78,7 @@ const Login: React.FC = () => {
           target="_blank"
         >
           <img
-            src="/src/Assets/logoGithub.svg"
+            src={githubLogo}
             alt="logo-gitbub"
             id="logoGithut"
             className='img-footer'
