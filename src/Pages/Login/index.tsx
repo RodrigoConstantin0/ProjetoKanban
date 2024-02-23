@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     return (
         <>
             <div className="Login-header">
-                <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
+                <img src="https://projeto-kanban-blue.vercel.app/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
                 <h2 className='h2-style'>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">

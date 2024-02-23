@@ -19,7 +19,7 @@ function Kanban() {
     <div className='container'>
       <header className="header-kanban">
         <div className="wrapperlogo">
-          <img src="/src/Assets/KanbanLogo.png" alt="Logo" />
+          <img src="https://projeto-kanban-blue.vercel.app/src/Assets/KanbanLogo.png" alt="Logo" />
         </div>
         <h2 className="h2header"> Kanban </h2>            
         <nav>
