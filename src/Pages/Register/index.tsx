@@ -57,7 +57,7 @@ const Register: React.FC = () => {
     <>
       <div className="Login-header">
         <img src={kanbanLogo} alt="Logo" className="logo" />
-        <h2 className="h2-style">Grupo 02 - Kanban</h2>
+        <h2 className="h2-style">Kanban</h2>
       </div>
 
       <div className="register-global">
