@@ -1,6 +1,8 @@
 import './style.css'
 import { Button } from "../../Components/Button/index.tsx";
 import AuthServiceProps from "../../Services/AuthService";
+import kanbanLogo from "../../Assets/KanbanLogo.png";
+import githubLogo from "../../Assets/logoGithub.svg";
 import { useNavigate } from 'react-router-dom';
 import App from '../../Components/Board/App.tsx';
 
@@ -19,7 +21,7 @@ function Kanban() {
     <div className='container'>
       <header className="header-kanban">
         <div className="wrapperlogo">
-          <img src="https://projeto-kanban-blue.vercel.app/src/Assets/KanbanLogo.png" alt="Logo" />
+          <img src={kanbanLogo} alt="Logo" />
         </div>
         <h2 className="h2header"> Kanban </h2>            
         <nav>
@@ -35,7 +37,7 @@ function Kanban() {
           target="_blank"
         >
           <img
-            src="/src/Assets/logoGithub.svg"
+            src={githubLogo}
             alt="logo-gitbub"
             id="logoGithut"
             className='img-footer'

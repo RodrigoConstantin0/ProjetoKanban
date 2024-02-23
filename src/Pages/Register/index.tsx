@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../../Services/AuthService";
-import './style.css'
+import kanbanLogo from "../../Assets/KanbanLogo.png";
+import githubLogo from "../../Assets/logoGithub.svg";
+import './style.css';
 import { Button } from "../../Components/Button";
 
 interface User {
@@ -54,7 +56,7 @@ const Register: React.FC = () => {
   return (
     <>
       <div className="Login-header">
-        <img src="https://projeto-kanban-blue.vercel.app/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
+        <img src={kanbanLogo} alt="Logo" className="logo" />
         <h2 className="h2-style">Grupo 02 - Kanban</h2>
       </div>
 
@@ -121,7 +123,7 @@ const Register: React.FC = () => {
           target="_blank"
         >
           <img
-            src="/src/Assets/logoGithub.svg"
+            src={githubLogo}
             alt="logo-gitbub"
             id="logoGithut"
             className='img-footer'
