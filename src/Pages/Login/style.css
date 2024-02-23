@@ -8,7 +8,7 @@ body {
 display: flex; 
 margin-top: 10%;
 align-items: center;    
-margin-left: 40%;
+margin-left: 37vw;
 padding: 0 1rem;
 background: rgba(255, 255, 255, 0.2);
 border-radius: 16px;
@@ -16,18 +16,24 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
-width: 40vh;
+width: 30vw;
 flex-direction: column;
 color:  rgb(119, 34, 153);
 justify-content: center;
 }
 
+.h2-style{
+  color: rgb(119, 34, 153);
+  width: 30vw;
+  display: flex;
+  
+}
 .Login-header {
 display: flex; 
 margin-top: 1%;
 align-items: center;
 justify-content: space-between;
-margin-left: 28%;
+margin-left: 40vw;
 padding: 0 1rem;
 background: rgba(255, 255, 255, 0.2);
 border-radius: 16px;
@@ -35,11 +41,11 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
-width: 100vh;
+width:25vw;
 }
 
 .input-Login, textarea {
-color: rgb(136, 46, 46);
+color: rgb(5, 4, 4);
 text-align: center;
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -47,7 +53,7 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 margin-top: 10px;
-margin-left: 20px;
+margin-left: 1vw;
 }
 .register-link{
   margin-top: 10px;
@@ -79,5 +85,37 @@ color: rgb(72, 54, 80);
   border-style: none;
   padding: 4px 8px;  
   align-items: center; 
-  margin-left: 90px; 
+  margin-left: 3vw;
+  
+}
+@media screen and (max-width: 768px) {
+  .register-global {
+      margin-left: 10%;
+      width: 80%;
+  }
+}
+.footer-style{
+  justify-content: space-between;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.footer-left{
+  display: flex;
+  align-items: center;
+}
+
+.P-footer{
+ margin-right: 20px;
+ color:rgb(119, 34, 153);
+}
+
+.img-footer{
+  width: 40px; 
 }
