@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthServiceProps from "../../Services/AuthService";
+import AuthService from "../../Services/AuthService";
 import './style.css'
 import { Button } from "../../Components/Button";
 
@@ -38,15 +38,14 @@ const Register: React.FC = () => {
     const newUser: User = { name, email, password };
     existingUsers.push(newUser);
     localStorage.setItem("users", JSON.stringify(existingUsers));
-    
-    AuthServiceProps.login(email);
-    localStorage.setItem('userName', name);
+    AuthService.login(email, name);   
     alert("Cadastro realizado com sucesso!");
     
-    const isLoggedIn = AuthServiceProps.isAuthenticated();
+    const isLoggedIn = AuthService.isAuthenticated();
     if (isLoggedIn) {
-      navigate('/Kanban');
+      navigate('/');
     } else {
+      navigate('/');
       alert("Usuário não autenticado após o cadastro.");
     }
   };

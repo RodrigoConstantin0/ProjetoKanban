@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AuthServiceProps from '../../Services/AuthService';
 import { Button } from '../../Components/Button';
 import './style.css'
 
 
 const Login: React.FC = () => {
-    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,8 +24,7 @@ const Login: React.FC = () => {
         const user = existingUsers.find((user) => user.email === email && user.password === password);
 
         if (user) {
-            AuthServiceProps.login(email);
-            navigate('/Kanban');
+            AuthServiceProps.login(email,user.name);            
         } else {
             setErrorMessage('Usuário ou senha incorretos.');
         }
@@ -67,7 +65,7 @@ const Login: React.FC = () => {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     
                 </form>
-                <Link to="../Register/index.tsx" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
+                <Link to="../Register" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
             </div>
     <footer className='footer-style'>
         <div className='footer-left'> 
