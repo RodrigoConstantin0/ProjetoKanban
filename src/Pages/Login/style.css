@@ -31,11 +31,9 @@ justify-content: center;
 }
 .Login-header {
 display: flex; 
-margin-top: 1%;
 align-items: center;
 justify-content: space-between;
-/* margin-left: 40vw; */
-margin: auto;
+margin: 2rem auto 0;
 padding: 0 1rem;
 background: rgba(255, 255, 255, 0.2);
 border-radius: 16px;
