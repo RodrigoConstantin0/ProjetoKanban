@@ -1,6 +1,6 @@
 interface AuthServiceProps {
   isAuthenticated: () => boolean;
-  login: (email: string) => void;
+  login: (email: string, name: string) => void;
   logout: () => void;
 }
 
@@ -9,13 +9,17 @@ const AuthService: AuthServiceProps = {
     const userLoggedIn = localStorage.getItem('userLoggedIn');
     return userLoggedIn === 'true' || false;
   },
-  login: (email: string) => {
+  login: (email: string, name: string) => {
     localStorage.setItem('userLoggedIn', 'true');
-    localStorage.setItem('email', email);
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('userName', name);
+    window.location.reload();
   },
   logout: () => {
     localStorage.removeItem('userLoggedIn');
-    localStorage.removeItem('email');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userName');
+    window.location.reload();
   },
 };
 export default AuthService;

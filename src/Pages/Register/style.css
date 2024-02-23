@@ -1,28 +1,42 @@
+body{
+    background-image: linear-gradient(to right top, #d6a0f6, #d094f6, #ca88f5, #c37cf5, #bc70f4, #ab77f9, #9a7efd, #8784ff, #6c98ff, #58aaff, #54b9ff, #62c6ff);
+    display: flex;  
+    margin: 0;   
+    min-height: 100vh;
+}
+.h2-style{
+    color: rgb(119, 34, 153);  
+    width: 40vw;
+}
 .register-global{
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-padding: 30px;
-margin-top: 150px;
-color: rgb(119, 34, 153);
-display: flex;
-flex-direction: column;
+    display: flex; 
+    margin-top: 5%;      
+    margin-left: 40vw;
+    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 20vw;
+    justify-content: center;
+    align-items: center;
 }
 .form-register{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    text-decoration: none;    
+    margin-top: 10px;     
+    align-items: center; 
+    margin-left: 1vw;
+    margin-bottom: 10px;
 }
 
 label {
     margin-top: 10px;
 }
 .input-Cadastro{
-color: rgb(219, 5, 5);
+color: rgb(19, 15, 15);
 text-align: center;
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -30,5 +44,53 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 margin-top: 10px;
-margin-left: 30px;
 }
+.h1Register{
+    text-align: center;
+    color:  rgb(119, 34, 153);
+}
+.register-button {
+    margin-top: 10px;   
+    border-radius: 5px; 
+    background-color: rgb(119, 34, 153);
+    color: white;
+    border-style: none;
+    padding: 4px 8px;  
+    align-items: center;      
+}
+.register{
+    text-decoration: none;
+    margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+    .register-global{
+        margin-left: 10%; 
+        width: 80%; 
+    }
+}
+
+.footer-style{
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .footer-left{
+    display: flex;
+    align-items: center;
+  }
+  
+  .P-footer{
+   margin-right: 20px;
+   color:rgb(119, 34, 153);
+  }
+  
+  .img-footer{
+    width: 40px; 
+  }

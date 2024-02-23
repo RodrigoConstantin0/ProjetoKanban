@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthServiceProps from "../../Services/AuthService";
+import AuthService from "../../Services/AuthService";
 import './style.css'
 import { Button } from "../../Components/Button";
 
@@ -38,15 +38,14 @@ const Register: React.FC = () => {
     const newUser: User = { name, email, password };
     existingUsers.push(newUser);
     localStorage.setItem("users", JSON.stringify(existingUsers));
-    
-    AuthServiceProps.login(email);
-    localStorage.setItem('userName', name); // Adicionando o nome do usuário no localStorage
+    AuthService.login(email, name);   
     alert("Cadastro realizado com sucesso!");
     
-    const isLoggedIn = AuthServiceProps.isAuthenticated();
+    const isLoggedIn = AuthService.isAuthenticated();
     if (isLoggedIn) {
-      navigate('/Kanban');
+      navigate('/');
     } else {
+      navigate('/');
       alert("Usuário não autenticado após o cadastro.");
     }
   };
@@ -56,12 +55,12 @@ const Register: React.FC = () => {
     <>
       <div className="Login-header">
         <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
-        <h2>Grupo 02 - Kanban</h2>
+        <h2 className="h2-style">Grupo 02 - Kanban</h2>
       </div>
 
       <div className="register-global">
         <form className="form-register" onSubmit={handleRegister}>
-          <h1>Cadastre - se</h1>
+          <h1 className="h1Register">Cadastre - se</h1>
           <label htmlFor="name">
             <input
               type="text"
@@ -105,14 +104,31 @@ const Register: React.FC = () => {
               className="input-Cadastro"
             />
           </label>
-
-          <Button titulo="Cadastrar" type="submit"/>
+          
+          <Button titulo="Cadastrar" type="submit" estilo="register-button"/>
+          
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <Link to="/" className="form-register"> Já possui cadastro? Clique aqui! </Link>
-        </form>
+          <Link to="/" className="register"> Já possui cadastro? Clique aqui! </Link>
+        </form>        
       </div>
+      <footer className='footer-style'>
+        <div className='footer-left'> 
+        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        <a
+          href="https://github.com/RodrigoConstantin0/ProjetoKanban"
+          target="_blank"
+        >
+          <img
+            src="/src/Assets/logoGithub.svg"
+            alt="logo-gitbub"
+            id="logoGithut"
+            className='img-footer'
+          />
+        </a>
+        </div>
+    </footer>
     </>
   );
 };

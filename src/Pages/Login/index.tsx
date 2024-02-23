@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AuthServiceProps from '../../Services/AuthService';
 import { Button } from '../../Components/Button';
 import './style.css'
 
 
 const Login: React.FC = () => {
-    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-
     
     interface User {
         name: string;
@@ -26,8 +24,7 @@ const Login: React.FC = () => {
         const user = existingUsers.find((user) => user.email === email && user.password === password);
 
         if (user) {
-            AuthServiceProps.login(email);
-            navigate('/Kanban');
+            AuthServiceProps.login(email,user.name);            
         } else {
             setErrorMessage('Usuário ou senha incorretos.');
         }
@@ -37,12 +34,12 @@ const Login: React.FC = () => {
         <>
             <div className="Login-header">
                 <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
-                <h2>Grupo 02 - Kanban</h2>
+                <h2 className='h2-style'>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">
-                <h1>Login</h1>
-                <form className="form-login" onSubmit={handleLogin}>
-                    <div className='input-container'> 
+                <h1 className='h1Login'>Login</h1>
+                <form onSubmit={handleLogin}>
+                    <div> 
                         <label htmlFor="login"></label>
                         <input
                             type="text"
@@ -52,7 +49,7 @@ const Login: React.FC = () => {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    <div className='input-container'>
+                    <div>
                         <label htmlFor="password"></label>
                         <input 
                             type="password" 
@@ -61,14 +58,31 @@ const Login: React.FC = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </div>                                           
-                     <Button titulo="Entrar" tipo="login"/>                      
+                    </div>  
+                                                             
+                     <Button  titulo="Entrar" tipo="login" estilo="login-button"/>                      
                    
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     
                 </form>
-                <Link to="../Register/index.tsx" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
+                <Link to="../Register" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
             </div>
+    <footer className='footer-style'>
+        <div className='footer-left'> 
+        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        <a
+          href="https://github.com/RodrigoConstantin0/ProjetoKanban"
+          target="_blank"
+        >
+          <img
+            src="/src/Assets/logoGithub.svg"
+            alt="logo-gitbub"
+            id="logoGithut"
+            className='img-footer'
+          />
+        </a>
+        </div>
+    </footer>
         </>
     );
 }
