@@ -22,6 +22,7 @@ function Kanban() {
       <header className="header-kanban">
         <div className="wrapperlogo">
           <img src={kanbanLogo} alt="Logo" />
+          <h2 className="h2header"> Kanban </h2>  
         </div>
         <nav className='navKanban'>
           {isLoggedIn && (
