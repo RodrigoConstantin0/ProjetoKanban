@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Board from "../Components/Board/Board";
 import "./Dashboard.css";
 import CustomInput from "../Components/CustomInput/CustomInput";

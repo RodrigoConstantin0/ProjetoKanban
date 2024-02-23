@@ -40,7 +40,7 @@ const Register: React.FC = () => {
     localStorage.setItem("users", JSON.stringify(existingUsers));
     
     AuthServiceProps.login(email);
-    localStorage.setItem('userName', name); // Adicionando o nome do usuário no localStorage
+    localStorage.setItem('userName', name);
     alert("Cadastro realizado com sucesso!");
     
     const isLoggedIn = AuthServiceProps.isAuthenticated();
@@ -61,7 +61,7 @@ const Register: React.FC = () => {
 
       <div className="register-global">
         <form className="form-register" onSubmit={handleRegister}>
-          <h1>Cadastre - se</h1>
+          <h1 className="h1Register">Cadastre - se</h1>
           <label htmlFor="name">
             <input
               type="text"
@@ -105,12 +105,13 @@ const Register: React.FC = () => {
               className="input-Cadastro"
             />
           </label>
-
-          <Button titulo="Cadastrar" type="submit"/>
+          
+          <Button titulo="Cadastrar" type="submit" estilo="register-button"/>
+          
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <Link to="/" className="form-register"> Já possui cadastro? Clique aqui! </Link>
+          <Link to="/" className="register"> Já possui cadastro? Clique aqui! </Link>
         </form>
       </div>
     </>
