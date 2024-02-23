@@ -11,7 +11,6 @@ const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-
     
     interface User {
         name: string;
@@ -40,9 +39,9 @@ const Login: React.FC = () => {
                 <h2>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">
-                <h1>Login</h1>
-                <form className="form-login" onSubmit={handleLogin}>
-                    <div className='input-container'> 
+                <h1 className='h1Login'>Login</h1>
+                <form onSubmit={handleLogin}>
+                    <div> 
                         <label htmlFor="login"></label>
                         <input
                             type="text"
@@ -52,7 +51,7 @@ const Login: React.FC = () => {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    <div className='input-container'>
+                    <div>
                         <label htmlFor="password"></label>
                         <input 
                             type="password" 
@@ -62,7 +61,7 @@ const Login: React.FC = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>                                           
-                     <Button titulo="Entrar" tipo="login"/>                      
+                     <Button  titulo="Entrar" tipo="login"/>                      
                    
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     
