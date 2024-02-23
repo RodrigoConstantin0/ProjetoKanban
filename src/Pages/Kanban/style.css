@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.wrapperlogo {
+.wrapperImg {
   animation: rotate 5s linear infinite;  
   filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
 }
@@ -43,25 +43,30 @@ body {
 .h2header { 
   color: rgb(119, 34, 153);
 }
-
-nav button {
+.navKanban{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.kanban-button {
   background-color: #772299;
   color: white;
   border-style: none;
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 6px;
   font-weight: bold;
+  margin-left: 1rem;
 }
 
-#buttonSair {
-  background-color: rgba(119, 34, 153, 0.2);
-  color: rgb(119, 34, 153);
+.kanban-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 #logoGithut {
   background-color: rgba(119, 34, 153, 0.2);
   padding: 8px;
   border-radius: 100%;
+  width: 24px;
 }
 
 #logoGithub:hover {
@@ -88,6 +93,8 @@ nav button {
   color: rgb(253, 253, 253);
 }
 .footer-style{
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   bottom: 0;
@@ -99,10 +106,6 @@ nav button {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.footer-left{
-  display: flex;
-  align-items: center;
-}
 
 .P-footer{
  margin-right: 20px;
@@ -110,5 +113,5 @@ nav button {
 }
 
 .img-footer{
-  width: 40px; 
+  /* width: 10px;  */
 }

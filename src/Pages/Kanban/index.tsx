@@ -24,7 +24,7 @@ function Kanban() {
           </div>
             <h2 className="h2header"> Kanban </h2>
         </div>
-        <nav>
+        <nav className='navKanban'>
           {isLoggedIn && (
             <>
               <p className='style-bemVindo'>Bem-vindo, {userName}</p>
@@ -36,7 +36,8 @@ function Kanban() {
     <App/>
     <footer className='footer-style'>
         <div className='footer-left'> 
-        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+          <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        </div>
         <a
           href="https://github.com/RodrigoConstantin0/ProjetoKanban"
           target="_blank"
@@ -48,7 +49,6 @@ function Kanban() {
             className='img-footer'
           />
         </a>
-        </div>
     </footer>
       </div>
     </>
