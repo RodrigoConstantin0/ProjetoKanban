@@ -51,7 +51,7 @@ margin-left: 8px;
     text-align: center;
     color:  rgb(119, 34, 153);
 }
-button {
+.register-button {
     margin-top: 10px;   
     border-radius: 5px; 
     background-color: rgb(119, 34, 153);
@@ -59,7 +59,7 @@ button {
     border-style: none;
     padding: 4px 8px;  
     align-items: center; 
-    margin-left: 10px;   
+    margin-left: 60px;   
 }
 .register{
     text-decoration: none;

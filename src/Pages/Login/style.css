@@ -71,3 +71,13 @@ color: rgb(72, 54, 80);
   animation: rotate 5s linear infinite;  
   filter: drop-shadow(2px 2px 4px rgba(3, 3, 8, 0.5));  
 }
+.login-button{
+  margin-top: 10px;   
+  border-radius: 5px; 
+  background-color: rgb(119, 34, 153);
+  color: white;
+  border-style: none;
+  padding: 4px 8px;  
+  align-items: center; 
+  margin-left: 90px; 
+}

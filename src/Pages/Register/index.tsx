@@ -105,9 +105,9 @@ const Register: React.FC = () => {
               className="input-Cadastro"
             />
           </label>
-          <div className="buttonRegister">
-          <Button titulo="Cadastrar" type="submit"/>
-          </div>
+          
+          <Button titulo="Cadastrar" type="submit" estilo="register-button"/>
+          
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 

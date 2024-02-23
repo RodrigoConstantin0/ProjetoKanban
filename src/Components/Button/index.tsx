@@ -4,15 +4,16 @@ import { CiLogout } from "react-icons/ci";
 
 
 interface ButtonGlobal {
+    estilo: string
     tipo?: 'login' | 'logout'
     titulo: ReactNode;
     type?: HTMLButtonElement['type'];
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: FC<ButtonGlobal> = ({ titulo, onClick, type, tipo }) => {
+const Button: FC<ButtonGlobal> = ({ titulo, onClick, type, tipo, estilo}) => {
     return (
-        <button onClick={onClick} type={type}>
+        <button onClick={onClick} type={type} className={estilo}>
             {
              tipo === 'login'&&    
             <CgLogIn style={{ marginRight: '8px', color: 'white', alignItems:'center' }}/>            
