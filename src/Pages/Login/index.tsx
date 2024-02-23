@@ -24,7 +24,8 @@ const Login: React.FC = () => {
         const user = existingUsers.find((user) => user.email === email && user.password === password);
 
         if (user) {
-            AuthServiceProps.login(email,user.name);            
+            AuthServiceProps.login(email,user.name);
+            window.location.reload();            
         } else {
             setErrorMessage('Usuário ou senha incorretos.');
         }
