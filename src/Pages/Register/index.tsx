@@ -56,7 +56,7 @@ const Register: React.FC = () => {
     <>
       <div className="Login-header">
         <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
-        <h2>Grupo 02 - Kanban</h2>
+        <h2 className="h2-style">Grupo 02 - Kanban</h2>
       </div>
 
       <div className="register-global">
@@ -112,8 +112,24 @@ const Register: React.FC = () => {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
           <Link to="/" className="register"> Já possui cadastro? Clique aqui! </Link>
-        </form>
+        </form>        
       </div>
+      <footer className='footer-style'>
+        <div className='footer-left'> 
+        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
+        <a
+          href="https://github.com/RodrigoConstantin0/ProjetoKanban"
+          target="_blank"
+        >
+          <img
+            src="/src/Assets/logoGithub.svg"
+            alt="logo-gitbub"
+            id="logoGithut"
+            className='img-footer'
+          />
+        </a>
+        </div>
+    </footer>
     </>
   );
 };
