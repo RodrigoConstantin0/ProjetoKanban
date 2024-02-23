@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AuthServiceProps from '../../Services/AuthService';
+import kanbanLogo from "../../Assets/KanbanLogo.png";
+import githubLogo from "../../Assets/logoGithub.svg";
 import { Button } from '../../Components/Button';
-import './style.css'
+import './style.css';
 
 
 const Login: React.FC = () => {
-    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,8 +26,8 @@ const Login: React.FC = () => {
         const user = existingUsers.find((user) => user.email === email && user.password === password);
 
         if (user) {
-            AuthServiceProps.login(email);
-            navigate('/Kanban');
+            AuthServiceProps.login(email,user.name);
+            window.location.reload();            
         } else {
             setErrorMessage('Usuário ou senha incorretos.');
         }
@@ -35,8 +36,8 @@ const Login: React.FC = () => {
     return (
         <>
             <div className="Login-header">
-                <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
-                <h2 className='h2-style'>Kanban</h2>
+                <img src={kanbanLogo} alt="Logo" className="logo" />
+                <h2 className='h2-style'>Grupo 02 - Kanban</h2>
             </div>
             <div className="login-style">
                 <h1 className='h1Login'>Login</h1>
@@ -67,7 +68,7 @@ const Login: React.FC = () => {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                     
                 </form>
-                <Link to="../Register/index.tsx" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
+                <Link to="../Register" className='register-link'>Não tem uma conta? Cadastre-se aqui!</Link>            
             </div>
     <footer className='footer-style'>
         <div className='footer-left'> 
@@ -78,7 +79,7 @@ const Login: React.FC = () => {
           target="_blank"
         >
           <img
-            src="/src/Assets/logoGithub.svg"
+            src={githubLogo}
             alt="logo-gitbub"
             id="logoGithut"
             className='img-footer'

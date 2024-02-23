@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthServiceProps from "../../Services/AuthService";
-import './style.css'
+import AuthService from "../../Services/AuthService";
+import kanbanLogo from "../../Assets/KanbanLogo.png";
+import githubLogo from "../../Assets/logoGithub.svg";
+import './style.css';
 import { Button } from "../../Components/Button";
 
 interface User {
@@ -38,15 +40,14 @@ const Register: React.FC = () => {
     const newUser: User = { name, email, password };
     existingUsers.push(newUser);
     localStorage.setItem("users", JSON.stringify(existingUsers));
-    
-    AuthServiceProps.login(email);
-    localStorage.setItem('userName', name);
+    AuthService.login(email, name);   
     alert("Cadastro realizado com sucesso!");
     
-    const isLoggedIn = AuthServiceProps.isAuthenticated();
+    const isLoggedIn = AuthService.isAuthenticated();
     if (isLoggedIn) {
-      navigate('/Kanban');
+      navigate('/');
     } else {
+      navigate('/');
       alert("Usuário não autenticado após o cadastro.");
     }
   };
@@ -55,7 +56,7 @@ const Register: React.FC = () => {
   return (
     <>
       <div className="Login-header">
-        <img src="/src/Assets/KanbanLogo.png" alt="Logo" className="logo" />
+        <img src={kanbanLogo} alt="Logo" className="logo" />
         <h2 className="h2-style">Grupo 02 - Kanban</h2>
       </div>
 
@@ -122,7 +123,7 @@ const Register: React.FC = () => {
           target="_blank"
         >
           <img
-            src="/src/Assets/logoGithub.svg"
+            src={githubLogo}
             alt="logo-gitbub"
             id="logoGithut"
             className='img-footer'

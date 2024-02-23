@@ -1,40 +1,54 @@
 import { ApiMockResponse } from "../ApiMockData/dummyData";
 import { IBoard } from "../Interfaces/Kanban";
 
-const LocalStorageKeyName = "kanban-boards";
-//Data Layer
+// Data Layer
 export class BoardAPI {
   async fetchBoardList(): Promise<IBoard[]> {
     const apiData: IBoard[] = ApiMockResponse;
     let BoardList: IBoard[] = [];
-    //first check local storage if local storage is empty then add api mock data as seed
-    if (localStorage.getItem(LocalStorageKeyName)) {
-      const localStorageData: IBoard[] = JSON.parse(
-        localStorage.getItem(LocalStorageKeyName) ?? "",
+
+    const userEmail = localStorage.getItem("userEmail");
+
+    if (userEmail) {
+      const users: { email: string; boards: IBoard[] }[] = JSON.parse(
+        localStorage.getItem("users") || "[]"
       );
-      BoardList = [...localStorageData];
-    } else {
-      BoardList = [...apiData];
-      updateLocalStorageBoards(BoardList);
+
+      const userIndex = users.findIndex((user) => user.email === userEmail);
+      
+      if (userIndex !== -1) {
+        BoardList = [...users[userIndex].boards] || [...apiData];
+        updateLocalStorageBoards(BoardList);
+      } else {
+        console.error("Usuário não encontrado.");
+      }
     }
-
     return BoardList;
-    //TODO:integrate API module when got API from backend team :)
-    /*
-      private readonly api = new Api();//it will have all Restful verbs functions
-      return axios.get(`ENDPOINT_GOES_HERE`)
-      .then((res: { data: any; }) => {
-        return res.data;
-      });
-      */
   }
-} //BoardAPI Class End
+}
 
-//Business Layer
+// Business Layer
 export async function fetchBoardList(): Promise<IBoard[]> {
   const api = new BoardAPI();
   return api.fetchBoardList();
 }
+
 export function updateLocalStorageBoards(boards: IBoard[]) {
-  localStorage.setItem(LocalStorageKeyName, JSON.stringify(boards));
+  const userEmail = localStorage.getItem("userEmail");
+
+  if (userEmail) {
+    const users: { email: string; boards: IBoard[] }[] = JSON.parse(
+      localStorage.getItem("users") || "[]"
+    );
+
+    const userIndex = users.findIndex((user) => user.email === userEmail);
+
+    if (userIndex !== -1) {
+      users[userIndex].boards = [...boards];
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+  } else {
+    console.error("Usuário não logado ao tentar atualizar os boards.");
+  }
 }

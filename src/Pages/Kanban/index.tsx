@@ -1,6 +1,8 @@
 import './style.css'
 import { Button } from "../../Components/Button/index.tsx";
 import AuthServiceProps from "../../Services/AuthService";
+import kanbanLogo from "../../Assets/KanbanLogo.png";
+import githubLogo from "../../Assets/logoGithub.svg";
 import { useNavigate } from 'react-router-dom';
 import App from '../../Components/Board/App.tsx';
 
@@ -18,11 +20,8 @@ function Kanban() {
     <>
     <div className='container'>
       <header className="header-kanban">
-        <div className='wrapperlogo'>
-          <div className="wrapperImg">
-            <img src="/src/Assets/KanbanLogo.png" alt="Logo" className='logo'/>
-          </div>
-            <h2 className="h2header"> Kanban </h2>
+        <div className="wrapperlogo">
+          <img src={kanbanLogo} alt="Logo" />
         </div>
         <nav className='navKanban'>
           {isLoggedIn && (
@@ -43,7 +42,7 @@ function Kanban() {
           target="_blank"
         >
           <img
-            src="/src/Assets/logoGithub.svg"
+            src={githubLogo}
             alt="logo-gitbub"
             id="logoGithut"
             className='img-footer'
