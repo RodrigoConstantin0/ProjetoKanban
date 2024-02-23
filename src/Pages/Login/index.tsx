@@ -8,7 +8,6 @@ import './style.css'
 const Login: React.FC = () => {
 
     const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     
@@ -23,10 +22,9 @@ const Login: React.FC = () => {
 
         const existingUsers: User[] = JSON.parse(localStorage.getItem('users') || '[]');
         const user = existingUsers.find((user) => user.email === email && user.password === password);
-        setName(JSON.stringify(user?.name))
 
         if (user) {
-            AuthServiceProps.login(email,name);            
+            AuthServiceProps.login(email,user.name);            
         } else {
             setErrorMessage('Usuário ou senha incorretos.');
         }
