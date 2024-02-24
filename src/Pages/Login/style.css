@@ -25,14 +25,14 @@ justify-content: center;
 
 .h2-style{
   color: rgb(119, 34, 153);
-  width: 30vw;
+  /* width: 30vw; */
   display: flex;
   
 }
 .Login-header {
 display: flex; 
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 margin: 2rem auto 0;
 padding: 0 1rem;
 background: rgba(255, 255, 255, 0.2);
