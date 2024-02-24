@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../../Services/AuthService";
 import kanbanLogo from "../../Assets/KanbanLogo.png";
 import githubLogo from "../../Assets/logoGithub.svg";
-import './style.css';
+import "./style.css";
 import { Button } from "../../Components/Button";
 
 interface User {
@@ -23,41 +23,44 @@ const Register: React.FC = () => {
 
   const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     if (password !== confirmPassword) {
       setErrorMessage("As senhas não coincidem.");
       return;
     }
-    
-    const existingUsers: User[] = JSON.parse(localStorage.getItem("users") || "[]");
-    
-    const existingUser = existingUsers.find(user => user.email === email || user.name === name);
+
+    const existingUsers: User[] = JSON.parse(
+      localStorage.getItem("users") || "[]"
+    );
+
+    const existingUser = existingUsers.find(
+      (user) => user.email === email || user.name === name
+    );
     if (existingUser) {
       setErrorMessage("Nome de usuário ou e-mail já estão em uso.");
       return;
     }
-    
+
     const newUser: User = { name, email, password };
     existingUsers.push(newUser);
     localStorage.setItem("users", JSON.stringify(existingUsers));
-    AuthService.login(email, name);   
+    AuthService.login(email, name);
     alert("Cadastro realizado com sucesso!");
-    
+
     const isLoggedIn = AuthService.isAuthenticated();
     if (isLoggedIn) {
-      navigate('/');
+      navigate("/");
     } else {
-      navigate('/');
+      navigate("/");
       alert("Usuário não autenticado após o cadastro.");
     }
   };
-  
 
   return (
     <>
       <div className="Login-header">
         <img src={kanbanLogo} alt="Logo" className="logo" />
-        <h2 className="h2-style">Kanban</h2>
+        <h2 className="h2-style">Trella</h2>
       </div>
 
       <div className="register-global">
@@ -106,31 +109,35 @@ const Register: React.FC = () => {
               className="input-Cadastro"
             />
           </label>
-          
-          <Button titulo="Cadastrar" type="submit" estilo="register-button"/>
-          
+
+          <Button titulo="Cadastrar" type="submit" estilo="register-button" />
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <Link to="/" className="register"> Já possui cadastro? Clique aqui! </Link>
-        </form>        
+          <Link to="/" className="register">
+            {" "}
+            Já possui cadastro? Clique aqui!{" "}
+          </Link>
+        </form>
       </div>
-      <footer className='footer-style'>
-        <div className='footer-left'> 
-        <p className='P-footer'>Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024</p>
-        <a
-          href="https://github.com/RodrigoConstantin0/ProjetoKanban"
-          target="_blank"
-        >
-          <img
-            src={githubLogo}
-            alt="logo-gitbub"
-            id="logoGithut"
-            className='img-footer'
-          />
-        </a>
+      <footer className="footer-style">
+        <div className="footer-left">
+          <p className="P-footer">
+            Feito pelo grupo 2 - Formação Front-end da Ada Tech 2024
+          </p>
+          <a
+            href="https://github.com/RodrigoConstantin0/ProjetoKanban"
+            target="_blank"
+          >
+            <img
+              src={githubLogo}
+              alt="logo-gitbub"
+              id="logoGithut"
+              className="img-footer"
+            />
+          </a>
         </div>
-    </footer>
+      </footer>
     </>
   );
 };
